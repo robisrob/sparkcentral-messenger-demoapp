@@ -5,7 +5,7 @@ This application will create this token based on a given userId. This applicatio
 
 ## Deploy
 - `./gradlew shadowJar`
-- deploy build/libs/sparkcentral-rtm-demo-jwtgenerator-all as a AWS Lambda
+- deploy build/libs/sparkcentral-rtm-demo-jwtgenerator-all.jar as a AWS Lambda
 - set the environment variables SECRETID and SECRETKEY when deploying the AWS Lambda
 
 ## Documentation
