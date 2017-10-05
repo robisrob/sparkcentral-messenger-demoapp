@@ -27,7 +27,7 @@ JWT payload
   "userId": THE_USER_ID
 }
 ```
-The JWT is created using following code:
+The JWT is created using following [code](https://github.com/sparkcentral/sparkcentral-rtm-demo-jwtgenerator/blob/master/src/main/java/com/sparkcentral/smooch/jwtgenerator/UserJWTGenerator.java):
 
 ```
 static String createUserJwt(String userId, String secretId, String secretKey) {
@@ -44,3 +44,4 @@ private static String base64Encoded(String value) {
   return new String(Base64.encode(value.getBytes()));
 }
 ```
+
