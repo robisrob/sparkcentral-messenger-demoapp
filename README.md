@@ -15,7 +15,7 @@ The application will create a JWT with the following header and payload.
 JWT Header
 ```
 {
-  "kid": YOUR_APP_ID,
+  "kid": YOUR_SECRET_ID,
   "typ": "JWT",
   "alg": "HS256"
 }
