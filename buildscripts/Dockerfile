@@ -5,4 +5,4 @@ WORKDIR /app
 COPY ./sparkcentral-rtm-demo-jwtgenerator .
 RUN adduser -S app
 USER app
-CMD ./bin/application
+CMD ./bin/sparkcentral-rtm-demo-jwtgenerator
