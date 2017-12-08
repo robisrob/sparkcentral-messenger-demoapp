@@ -1,5 +1,8 @@
 language: java
 jdk:
   - oraclejdk8
-
-script: ./gradlew test
+services:
+ - docker
+script: ./gradlew build
+after_success:
+ -sh buildscripts/build_publish_docker_image.sh

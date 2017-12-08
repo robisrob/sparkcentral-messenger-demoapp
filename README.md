@@ -1,7 +1,7 @@
 # sparkcentral-rtm-demo-jwtgenerator [![Build Status](https://travis-ci.org/sparkcentral/sparkcentral-rtm-demo-jwtgenerator.svg)](https://travis-ci.org/sparkcentral/sparkcentral-rtm-demo-jwtgenerator)
 To identify a user in the sparkcentral chatclient, you need to pass a signed JWT to the login function. This jwt will contain the userId and is signed using the secret key from the app.
 
-This application will create this token based on a given userId. This application is meant to be deployed as a AWS Lambda.
+This application will create this token based on a given userId. This application is webapplication.
 
 ## Deploy
 - `./gradlew shadowJar`

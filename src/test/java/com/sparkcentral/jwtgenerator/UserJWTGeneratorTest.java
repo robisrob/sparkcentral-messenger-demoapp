@@ -1,4 +1,4 @@
-package com.sparkcentral.smooch.jwtgenerator;
+package com.sparkcentral.jwtgenerator;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
@@ -10,7 +10,7 @@ public class UserJWTGeneratorTest {
 
     @Test
     public void testCreateJWT() {
-        Assertions.assertThat(new UserJWTGenerator().createUserJwt("rob.s@sparkcentral.com", secretId, secretKey))
+        Assertions.assertThat(new UserJWTGenerator(secretId, secretKey).createUserJwt("rob.s@sparkcentral.com"))
                 .isEqualTo("eyJraWQiOiJhcHBfNTFjYXFkMjM1YjQ2ZjEwMDNhNmRlNjUzIiwidHlwIjoiSldUIiwiYWxnIjoiSFMyNTYifQ.eyJzY29wZSI6ImFwcFVzZXIiLCJ1c2VySWQiOiJyb2Iuc0BzcGFya2NlbnRyYWwuY29tIn0.uowfVrT8CgeurpRiwTCa7CMpyfze3LShpT0CKOtSOkg");
     }
 }
