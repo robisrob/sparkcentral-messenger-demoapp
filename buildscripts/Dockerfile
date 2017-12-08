@@ -2,7 +2,7 @@
 FROM openjdk:8-jre-alpine
 MAINTAINER Rob Swartenbroekx "rob.s@sparkcentral.com"
 WORKDIR /app
-COPY ./application .
+COPY ./sparkcentral-rtm-demo-jwtgenerator .
 RUN adduser -S app
 USER app
 CMD ./bin/application
