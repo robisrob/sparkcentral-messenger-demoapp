@@ -1,8 +1,9 @@
+dist: trusty
+sudo: false
 language: java
-jdk:
-  - oraclejdk8
 services:
- - docker
-script: ./gradlew build
+  - docker
+script:
+  - ./gradlew build
 after_success:
- -sh buildscripts/build_publish_docker_image.sh
+  - sh buildscripts/build_publish_docker_image.sh
