@@ -1,6 +1,6 @@
 cd $HOME/build/sparkcentral/sparkcentral-rtm-demo-jwtgenerator
 mkdir docker_workdir
-./gradlew :application:distTar
+./gradlew distTar
 cp buildscripts/Dockerfile ./docker_workdir
 cd docker_workdir
 tar -xf ../build/distributions/sparkcentral-rtm-demo-jwtgenerator.tar
