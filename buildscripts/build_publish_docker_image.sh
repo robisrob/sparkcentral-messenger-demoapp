@@ -6,4 +6,4 @@ cd docker_workdir
 tar -xf ../build/distributions/sparkcentral-rtm-demo-jwtgenerator.tar
 docker build -t sparkcentral/sparkcentral-rtm-demo-jwtgenerator:$TRAVIS_BUILD_NUMBER .
 docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-docker push sparkcentralinc/kafka-experiment:$TRAVIS_BUILD_NUMBER
+docker push sparkcentralinc/sparkcentral-rtm-demo-jwtgenerator:$TRAVIS_BUILD_NUMBER
