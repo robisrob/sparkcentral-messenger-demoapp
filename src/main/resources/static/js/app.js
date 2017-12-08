@@ -1,5 +1,5 @@
 var app = (function () {
-    function init() {
+    function pageInit() {
         $('#loginForm').on('submit', login);
         $('#logoutMenuItem').on('click', logout);
         $('#loginModal').on('shown.bs.modal', setFocusOnEmailInLoginForm)
@@ -26,8 +26,8 @@ var app = (function () {
 
             function loginInSparkcentral() {
                 return fetch("jwt?userId=" + $('#email').val())
-                    .then(response => response.json())
-                    .then(json => Sparkcentral.login($('#email').val(), json.jsonwebtoken));
+                    .then(response => response.text())
+                    .then(webtoken => Sparkcentral.login($('#email').val(), webtoken));
             }
 
             function clearLoginForm() {
@@ -63,31 +63,45 @@ var app = (function () {
         }
     };
 
+    function sparkcentralInit() {
+
+        getAppId().then(appId => init(appId));
+
+        function init(appId) {
+            Sparkcentral.init({
+                appId: appId,
+                customText: {
+                    headerText: 'How can we help?',
+                    inputPlaceholder: 'Type a message...',
+                    sendButtonText: 'Send',
+                    introductionText: 'We\'re here to talk, so ask us anything!',
+                    introAppText: 'Message us below or from your favorite app.',
+                    messageError: 'An error occured while sending your message. Please try again.',
+                    invalidFileError: 'Only images are supported. Choose a file with a supported extension (jpg, jpeg, png, gif, or bmp).',
+                    messageIndicatorTitleSingular: '({count}) New message',
+                    messageIndicatorTitlePlural: '({count}) New messages',
+                    connectNotificationText: 'Be notified inside your other apps when you get a reply.',
+                    fetchingHistory: 'Retrieving history...',
+                    fetchHistory: 'Load more',
+                    clickToRetry: 'Message not delivered. Click to retry.',
+                    tapToRetry: 'Message not delivered. Tap to retry.'
+                }
+            });
+        }
+
+        function getAppId() {
+            return fetch("properties/appId").then(appIdResponse => appIdResponse.text());
+        }
+    }
+
     return {
-        init: init
+        pageInit: pageInit,
+        sparkcentralInit: sparkcentralInit
     };
 })()
 
-$(function () {
-    app.init();
 
-    Sparkcentral.init({
-        appId: '59dfaccf38c35f002805cb66',
-        customText: {
-            headerText: 'How can we help?',
-            inputPlaceholder: 'Type a message...',
-            sendButtonText: 'Send',
-            introductionText: 'We\'re here to talk, so ask us anything!',
-            introAppText: 'Message us below or from your favorite app.',
-            messageError: 'An error occured while sending your message. Please try again.',
-            invalidFileError: 'Only images are supported. Choose a file with a supported extension (jpg, jpeg, png, gif, or bmp).',
-            messageIndicatorTitleSingular: '({count}) New message',
-            messageIndicatorTitlePlural: '({count}) New messages',
-            connectNotificationText: 'Be notified inside your other apps when you get a reply.',
-            fetchingHistory: 'Retrieving history...',
-            fetchHistory: 'Load more',
-            clickToRetry: 'Message not delivered. Click to retry.',
-            tapToRetry: 'Message not delivered. Tap to retry.'
-        }
-    });
+$(function () {
+    app.pageInit();
+    app.sparkcentralInit();
 });

@@ -1,6 +1,5 @@
 package com.sparkcentral.jwtgenerator.services;
 
-import com.sparkcentral.jwtgenerator.tos.JWTTO;
 import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -19,14 +18,14 @@ public class UserJWTGenerator {
         this.secretKey = secretKey;
     }
 
-    public JWTTO createUserJwt(String userId) {
-        return new JWTTO(Jwts.builder()
+    public String createUserJwt(String userId) {
+        return Jwts.builder()
                 .claim("scope", "appUser")
                 .claim("userId", userId)
                 .setHeaderParam("kid", secretId)
                 .setHeaderParam("typ", "JWT")
                 .signWith(HS256, base64Encoded(secretKey))
-                .compact());
+                .compact();
     }
 
     private String base64Encoded(String value) {

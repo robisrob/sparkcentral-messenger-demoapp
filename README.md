@@ -30,7 +30,7 @@ JWT payload
 The JWT is created using following [code](https://github.com/sparkcentral/sparkcentral-rtm-demo-jwtgenerator/blob/master/src/main/java/com/sparkcentral/smooch/jwtgenerator/UserJWTGenerator.java):
 
 ```
-static String createUserJwt(String userId, String secretId, String secretKey) {
+templates String createUserJwt(String userId, String secretId, String secretKey) {
   return Jwts.builder()
             .claim("scope", "appUser")
             .claim("userId", userId)
@@ -40,7 +40,7 @@ static String createUserJwt(String userId, String secretId, String secretKey) {
             .compact();
  }
 
-private static String base64Encoded(String value) {
+private templates String base64Encoded(String value) {
   return new String(Base64.encode(value.getBytes()));
 }
 ```
