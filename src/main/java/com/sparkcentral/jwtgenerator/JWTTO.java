@@ -26,4 +26,11 @@ public class JWTTO {
     public int hashCode() {
         return Objects.hash(jsonwebtoken);
     }
+
+    @Override
+    public String toString() {
+        return "JWTTO{" +
+                "jsonwebtoken='" + jsonwebtoken + '\'' +
+                '}';
+    }
 }
