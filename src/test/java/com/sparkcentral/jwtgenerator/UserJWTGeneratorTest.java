@@ -1,5 +1,7 @@
 package com.sparkcentral.jwtgenerator;
 
+import com.sparkcentral.jwtgenerator.services.UserJWTGenerator;
+import com.sparkcentral.jwtgenerator.tos.JWTTO;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 

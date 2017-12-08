@@ -1,4 +1,4 @@
-package com.sparkcentral.jwtgenerator;
+package com.sparkcentral.jwtgenerator.tos;
 
 import java.util.Objects;
 

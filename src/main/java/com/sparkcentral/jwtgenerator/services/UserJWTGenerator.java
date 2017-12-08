@@ -1,5 +1,6 @@
-package com.sparkcentral.jwtgenerator;
+package com.sparkcentral.jwtgenerator.services;
 
+import com.sparkcentral.jwtgenerator.tos.JWTTO;
 import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -8,12 +9,12 @@ import static io.jsonwebtoken.SignatureAlgorithm.HS256;
 import static org.apache.tomcat.util.codec.binary.Base64.encodeBase64;
 
 @Service
-class UserJWTGenerator {
+public class UserJWTGenerator {
 
     private final String secretId;
     private final String secretKey;
 
-    UserJWTGenerator(@Value("${SECRET_ID}")String secretId, @Value("${SECRET_KEY}")String secretKey) {
+    public UserJWTGenerator(@Value("${SECRET_ID}")String secretId, @Value("${SECRET_KEY}")String secretKey) {
         this.secretId = secretId;
         this.secretKey = secretKey;
     }
