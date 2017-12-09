@@ -2,7 +2,7 @@
 Demo application that uses Sparkcentral real-time messaging
 
 ## Documentation
-### Include the following script on [the html page](https://github.com/sparkcentral/sparkcentral-rtm-demo-jwtgenerator/blob/allinone/src/main/resources/static/index.html)
+### Include the following script on [the html page](https://github.com/sparkcentral/sparkcentral-messenger-demoapp/blob/allinone/src/main/resources/static/index.html)
 ```
 <script>
 var loaderUrl = 'https://cdn.sparkcentral.com/rtm/web/loader.latest.json';
@@ -10,7 +10,7 @@ var loaderUrl = 'https://cdn.sparkcentral.com/rtm/web/loader.latest.json';
 </script>
 ```
 To prevent delay, we have put this script in the bottom of our page.
-### Setting up the webmessenger in [the javascript file](https://github.com/sparkcentral/sparkcentral-rtm-demo-jwtgenerator/blob/allinone/src/main/resources/static/js/app.js)
+### Setting up the webmessenger in [the javascript file](https://github.com/sparkcentral/sparkcentral-messenger-demoapp/blob/allinone/src/main/resources/static/js/app.js)
 #### Call the init function on Sparkcentral
 ````
 function init(appId) {
@@ -38,7 +38,7 @@ function init(appId) {
 ### Identify a user
 Default an anonymous chatsession is started. To identify the user we call the login function on Sparkcentral. We need to pass the identifier of our choice and a json webtoken containing the identifier. This token is signed with the app secret. Because we don't want to expose our app secret, we deployed a service that can generate the json webtoken given an identifier.
 
-Documentation of such a service [sparkcentral-rtm-demo-jwtgenerator](JWTGENERATOR.md).
+Documentation of such a service [sparkcentral-messenger-demoapp](JWTGENERATOR.md).
 
 ```
 function loginInSparkcentral() {

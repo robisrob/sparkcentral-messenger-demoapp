@@ -2,7 +2,7 @@
 FROM openjdk:8-jre-alpine
 MAINTAINER Rob Swartenbroekx "rob.s@sparkcentral.com"
 WORKDIR /app
-ADD ./sparkcentral-rtm-demo-jwtgenerator.tar .
+ADD ./sparkcentral-messenger-demoapp.tar .
 RUN adduser -S app
 USER app
-CMD ./sparkcentral-rtm-demo-jwtgenerator/bin/sparkcentral-rtm-demo-jwtgenerator
+CMD ./sparkcentral-messenger-demoapp/bin/sparkcentral-messenger-demoapp

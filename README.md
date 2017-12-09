@@ -10,9 +10,9 @@ This is an application to demonstrate the integration of Sparkcentral Messenger 
 - `./gradlew run`
 
 ### Using Docker
-The application is put on [Docker Hub](https://hub.docker.com/r/sparkcentralinc/sparkcentral-rtm-demo-jwtgenerator/). Therefore you can run the application using the following command:
+The application is put on [Docker Hub](https://hub.docker.com/r/sparkcentralinc/sparkcentral-messenger-demoapp/). Therefore you can run the application using the following command:
 
-`docker run -eAPP_ID=${app_id} -eSECRET_ID=${secret_id} -eSECRET_KEY={secret_key} -p5000:8080 sparkcentralinc/sparkcentral-rtm-demo-jwtgenerator:26`
+`docker run -eAPP_ID=${app_id} -eSECRET_ID=${secret_id} -eSECRET_KEY={secret_key} -p5000:8080 sparkcentralinc/sparkcentral-messenger-demoapp:26`
 
 ## Documentation
 - [Integration with a website](documentation/INTEGRATION.md)
