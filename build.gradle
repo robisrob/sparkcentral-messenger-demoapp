@@ -2,6 +2,7 @@ plugins {
     id 'java-library'
     id 'application'
     id 'io.spring.dependency-management' version '1.0.3.RELEASE'
+    id 'com.palantir.docker' version '0.13.0'
 }
 
 mainClassName = 'com.sparkcentral.jwtgenerator.Application'
@@ -23,11 +24,15 @@ dependencyManagement {
 dependencies {
     implementation(
             'org.springframework.boot:spring-boot-starter-web',
-            'org.springframework.boot:spring-boot-starter-thymeleaf',
             'io.jsonwebtoken:jjwt')
 
     testImplementation(
             'junit:junit',
             'org.assertj:assertj-core',
     )
+}
+
+docker {
+    name "sparkcentralinc/sparkcentral-rtm-demo-jwtgenerator:${System.properties['buildNumber']}"
+    files tasks.distTar.outputs
 }
