@@ -17,7 +17,7 @@ public class UserJWTController {
         this.userJWTGenerator = userJWTGenerator;
     }
 
-    @GetMapping()
+    @GetMapping
     public String getJWTToken(@PathParam(value="userId") String userId) {
         return userJWTGenerator.createUserJwt(userId);
     }
