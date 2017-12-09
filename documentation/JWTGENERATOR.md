@@ -20,7 +20,7 @@ JWT payload
   "userId": THE_USER_ID
 }
 ```
-The JWT is created using following [code](https://github.com/sparkcentral/sparkcentral-messenger-demoapp/blob/allinone/src/main/java/com/sparkcentral/jwtgenerator/services/UserJWTGenerator.java):
+The JWT is created using following [code](../src/main/java/com/sparkcentral/jwtgenerator/services/UserJWTGenerator.java):
 
 ```
 public String createUserJwt(String userId) {
