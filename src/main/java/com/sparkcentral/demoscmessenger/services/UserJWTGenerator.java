@@ -1,4 +1,4 @@
-package com.sparkcentral.jwtgenerator.services;
+package com.sparkcentral.demoscmessenger.services;
 
 import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Value;

@@ -1,6 +1,6 @@
-package com.sparkcentral.jwtgenerator;
+package com.sparkcentral.demoscmessenger;
 
-import com.sparkcentral.jwtgenerator.services.UserJWTGenerator;
+import com.sparkcentral.demoscmessenger.services.UserJWTGenerator;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 

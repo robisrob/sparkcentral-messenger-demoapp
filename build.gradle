@@ -5,7 +5,7 @@ plugins {
     id 'com.palantir.docker' version '0.13.0'
 }
 
-mainClassName = 'com.sparkcentral.jwtgenerator.Application'
+mainClassName = 'com.sparkcentral.demoscmessenger.Application'
 
 repositories {
     mavenCentral()

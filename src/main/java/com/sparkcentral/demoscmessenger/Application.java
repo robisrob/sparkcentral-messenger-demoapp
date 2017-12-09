@@ -1,4 +1,4 @@
-package com.sparkcentral.jwtgenerator;
+package com.sparkcentral.demoscmessenger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

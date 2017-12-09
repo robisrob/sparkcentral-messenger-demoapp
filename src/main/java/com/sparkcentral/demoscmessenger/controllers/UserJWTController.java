@@ -1,6 +1,6 @@
-package com.sparkcentral.jwtgenerator.controllers;
+package com.sparkcentral.demoscmessenger.controllers;
 
-import com.sparkcentral.jwtgenerator.services.UserJWTGenerator;
+import com.sparkcentral.demoscmessenger.services.UserJWTGenerator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
