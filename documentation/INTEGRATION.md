@@ -38,7 +38,7 @@ function init(appId) {
 ### Identify a user
 Default an anonymous chatsession is started. To identify the user we call the login function on Sparkcentral. We need to pass the identifier of our choice and a json webtoken containing the identifier. This token is signed with the app secret. Because we don't want to expose our app secret, we deployed a service that can generate the json webtoken given an identifier.
 
-Documentation of such a service [sparkcentral-rtm-demo-jwtgenerator](JWTGENERATOR.MD).
+Documentation of such a service [sparkcentral-rtm-demo-jwtgenerator](JWTGENERATOR.md).
 
 ```
 function loginInSparkcentral() {
