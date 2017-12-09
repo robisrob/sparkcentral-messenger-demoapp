@@ -1,4 +1,4 @@
-# Sparkcentral Messenger demo application [![Build Status](https://travis-ci.org/sparkcentral/sparkcentral-messenger-demoapp.svg)](https://travis-ci.org/sparkcentral/sparkcentral-rtm-demo-jwtgenerator)
+# Sparkcentral Messenger demo application [![Build Status](https://travis-ci.org/sparkcentral/sparkcentral-messenger-demoapp.svg)](https://travis-ci.org/sparkcentral/sparkcentral-messenger-demoapp)
 This is an application to demonstrate the integration of Sparkcentral Messenger with a website
 
 ## Build application
