@@ -2,7 +2,7 @@
 Demo application that uses Sparkcentral real-time messaging
 
 ## Documentation
-### Include the following script on [the html page](https://github.com/sparkcentral/sparkcentral-messenger-demoapp/blob/allinone/src/main/resources/static/index.html)
+### Include the following script on [the html page](../src/main/resources/static/index.html)
 ```
 <script>
 var loaderUrl = 'https://cdn.sparkcentral.com/rtm/web/loader.latest.json';
@@ -10,7 +10,7 @@ var loaderUrl = 'https://cdn.sparkcentral.com/rtm/web/loader.latest.json';
 </script>
 ```
 To prevent delay, we have put this script in the bottom of our page.
-### Setting up the webmessenger in [the javascript file](https://github.com/sparkcentral/sparkcentral-messenger-demoapp/blob/allinone/src/main/resources/static/js/app.js)
+### Setting up the webmessenger in [the javascript file](../src/main/resources/static/js/app.js)
 #### Call the init function on Sparkcentral
 ````
 function init(appId) {
