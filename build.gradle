@@ -1,21 +1,38 @@
 plugins {
     id 'java-library'
     id 'application'
+    id 'io.spring.dependency-management' version '1.0.3.RELEASE'
+    id 'com.palantir.docker' version '0.13.0'
 }
 
-mainClassName = "com.sparkcentral.jwtgenerator.Application"
+mainClassName = 'com.sparkcentral.jwtgenerator.Application'
 
 repositories {
     mavenCentral()
 }
 
+dependencyManagement {
+    imports {
+        mavenBom 'io.spring.platform:platform-bom:Brussels-SR6'
+    }
+
+    dependencies {
+        dependency 'io.jsonwebtoken:jjwt:0.8.0'
+    }
+}
+
 dependencies {
-    implementation ("org.springframework.boot:spring-boot-starter-web:1.5.9.RELEASE",
-            'io.jsonwebtoken:jjwt:0.8.0')
+    implementation(
+            'org.springframework.boot:spring-boot-starter-web',
+            'io.jsonwebtoken:jjwt')
 
-            testImplementation (
-            'junit:junit:4.11',
-            'org.assertj:assertj-core:3.2.0',
+    testImplementation(
+            'junit:junit',
+            'org.assertj:assertj-core',
     )
+}
 
+docker {
+    name "sparkcentralinc/sparkcentral-rtm-demo-jwtgenerator:${System.properties['buildNumber']}"
+    files tasks.distTar.outputs
 }

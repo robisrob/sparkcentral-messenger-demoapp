@@ -1,4 +1,4 @@
-package com.sparkcentral.jwtgenerator;
+package com.sparkcentral.jwtgenerator.services;
 
 import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Value;
@@ -8,24 +8,24 @@ import static io.jsonwebtoken.SignatureAlgorithm.HS256;
 import static org.apache.tomcat.util.codec.binary.Base64.encodeBase64;
 
 @Service
-class UserJWTGenerator {
+public class UserJWTGenerator {
 
     private final String secretId;
     private final String secretKey;
 
-    UserJWTGenerator(@Value("${SECRET_ID}")String secretId, @Value("${SECRET_KEY}")String secretKey) {
+    public UserJWTGenerator(@Value("${SECRET_ID}")String secretId, @Value("${SECRET_KEY}")String secretKey) {
         this.secretId = secretId;
         this.secretKey = secretKey;
     }
 
-    public JWTTO createUserJwt(String userId) {
-        return new JWTTO(Jwts.builder()
+    public String createUserJwt(String userId) {
+        return Jwts.builder()
                 .claim("scope", "appUser")
                 .claim("userId", userId)
                 .setHeaderParam("kid", secretId)
                 .setHeaderParam("typ", "JWT")
                 .signWith(HS256, base64Encoded(secretKey))
-                .compact());
+                .compact();
     }
 
     private String base64Encoded(String value) {

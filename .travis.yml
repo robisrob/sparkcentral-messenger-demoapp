@@ -3,7 +3,8 @@ sudo: false
 language: java
 services:
   - docker
+before_script:
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 script:
   - ./gradlew build
-after_success:
-  - sh buildscripts/build_publish_docker_image.sh 59dfaccf38c35f002805cb66
+  - ./gradlew dockerPush -DbuildNumber="$TRAVIS_BUILD_NUMBER"

@@ -1,6 +1,6 @@
-package com.sparkcentral.jwtgenerator;
+package com.sparkcentral.jwtgenerator.controllers;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
+import com.sparkcentral.jwtgenerator.services.UserJWTGenerator;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,9 +17,9 @@ public class UserJWTController {
         this.userJWTGenerator = userJWTGenerator;
     }
 
-    @CrossOrigin(origins = "*")
     @GetMapping()
-    public JWTTO getJWTToken(@PathParam(value="userId") String userId) {
+    public String getJWTToken(@PathParam(value="userId") String userId) {
         return userJWTGenerator.createUserJwt(userId);
     }
+
 }

@@ -1,0 +1,63 @@
+html {
+    min-height: 100%
+}
+
+body {
+    background: linear-gradient(-144deg, #A5B8FB 0%, #6CC0F5 100%);
+    color: #FFFFFF;
+    font-family: 'Poppins', sans-serif;
+    border-collapse: collapse;
+
+}
+
+table {
+    border-collapse: collapse;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: .6em;
+}
+
+h2 {
+    font-size: 1.2em;
+    font-weight: 200;
+}
+
+.span12 {
+    padding: 10px;
+}
+
+#loginModal {
+    color: #000000;
+}
+
+.span12 {text-align: center}
+
+.navbar-toggle {
+    margin-top: 20px;
+}
+
+.navbar-default {
+    background:transparent;
+    border: 0;
+    font-size: 1.1em;
+}
+
+.navbar-collapse {
+    border: 0;
+
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #FFFFFF;
+}
+
+.row{
+    margin-top: 30px;
+    margin-bottom: 30px
+  }
+
+.navbar-nav {
+    padding-top: 20px
+}
