@@ -33,7 +33,7 @@ dependencies {
 }
 
 docker {
-    name "sparkcentralinc/sparkcentral-rtm-demo-jwtgenerator"
-    tags 'latest', "${System.properties['buildNumber']}"
+    name "sparkcentralinc/sparkcentral-rtm-demo-jwtgenerator:${System.properties['buildNumber']}"
+    tags 'latest'
     files tasks.distTar.outputs
 }

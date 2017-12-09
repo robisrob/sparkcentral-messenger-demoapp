@@ -7,4 +7,4 @@ before_script:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 script:
   - ./gradlew build
-  - ./gradlew dockerPush -DbuildNumber=$TRAVIS_BUILD_NUMBER
+  - ./gradlew dockerPush -DbuildNumber="$TRAVIS_BUILD_NUMBER"
