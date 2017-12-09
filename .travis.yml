@@ -8,3 +8,4 @@ before_script:
 script:
   - ./gradlew build
   - ./gradlew dockerPush -DbuildNumber="$TRAVIS_BUILD_NUMBER"
+  - ./gradlew dockerPushlatest

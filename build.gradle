@@ -34,5 +34,6 @@ dependencies {
 
 docker {
     name "sparkcentralinc/sparkcentral-messenger-demoapp:${System.properties['buildNumber']}"
+    tags 'latest'
     files tasks.distTar.outputs
 }
