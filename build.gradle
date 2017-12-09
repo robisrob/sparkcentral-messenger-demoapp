@@ -7,6 +7,8 @@ plugins {
 
 mainClassName = 'com.sparkcentral.demoscmessenger.Application'
 
+version=System.properties['buildNumber']
+
 repositories {
     mavenCentral()
 }
@@ -37,4 +39,10 @@ docker {
     name "sparkcentralinc/sparkcentral-messenger-demoapp:${System.properties['buildNumber']}"
     tags 'latest'
     files tasks.distTar.outputs
+}
+
+processResources {
+    filesMatching('application.properties') {
+        expand(project.properties)
+    }
 }
