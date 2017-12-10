@@ -25,7 +25,7 @@ var app = (function () {
             }
 
             function loginInSparkcentral() {
-                return fetch("jwt?userId=" + $('#email').val())
+                return fetch("rest/jwt?userId=" + $('#email').val())
                     .then(response => response.text())
                     .then(webtoken => Sparkcentral.login($('#email').val(), webtoken));
             }
@@ -90,7 +90,7 @@ var app = (function () {
         }
 
         function getAppId() {
-            return fetch("properties/appId").then(appIdResponse => appIdResponse.text());
+            return fetch("rest/properties/appId").then(appIdResponse => appIdResponse.text());
         }
     }
 

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.websocket.server.PathParam;
 
 @RestController
-@RequestMapping("jwt")
+@RequestMapping("rest/jwt")
 public class UserJWTController {
 
     private final UserJWTGenerator userJWTGenerator;
