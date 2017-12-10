@@ -9,9 +9,8 @@ script:
   - ./gradlew clean build -DbuildNumber="$TRAVIS_BUILD_NUMBER"
   - ./gradlew dockerPush -DbuildNumber="$TRAVIS_BUILD_NUMBER"
   - ./gradlew dockerPushlatest -DbuildNumber="$TRAVIS_BUILD_NUMBER"
-after_script:
   - git config --global user.email "travis@travis-ci.org"
   - git config --global user.name "travis-ci"
   - git tag $TRAVIS_BUILD_NUMBER
-  - git push origin $TRAVIS_BUILD_NUMBER
+  - git push -q https://${GH_TOKEN}@github.com/sparkcentral/sparkcentral-messenger-demoapp --tags  2> /dev/null
 
