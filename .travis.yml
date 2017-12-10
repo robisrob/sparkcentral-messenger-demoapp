@@ -3,6 +3,7 @@ sudo: false
 language: java
 services:
   - docker
+if: tag IS blank
 before_script:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
 script:
