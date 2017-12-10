@@ -2,7 +2,6 @@
 To identify a user in Sparkcentral Messenger, you need to pass a signed JWT to the login function. This jwt will contain the userId and is signed using the secret key from the app.
 
 ## Documentation
-
 The application will create a JWT with the following header and payload.
 
 JWT Header
