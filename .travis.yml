@@ -1,17 +1,6 @@
-dist: trusty
-sudo: false
-language: java
-services:
-  - docker
-if: tag IS blank
-before_script:
-  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-script:
-  - ./gradlew clean build -DbuildNumber="$TRAVIS_BUILD_NUMBER"
-  - ./gradlew dockerPush -DbuildNumber="$TRAVIS_BUILD_NUMBER"
-  - ./gradlew dockerPushlatest -DbuildNumber="$TRAVIS_BUILD_NUMBER"
-  - git config --global user.email "travis@travis-ci.org"
-  - git config --global user.name "travis-ci"
-  - git tag $TRAVIS_BUILD_NUMBER
-  - git push -q https://${GH_TOKEN}@github.com/sparkcentral/sparkcentral-messenger-demoapp --tags  2> /dev/null
-
+-dist: trusty
+ -sudo: false
+ -language: java
+ -if: tag IS blank
+ -script:
+ -  - ./gradlew clean build -DbuildNumber="$TRAVIS_BUILD_NUMBER"
