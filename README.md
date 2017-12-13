@@ -1,4 +1,4 @@
-# Sparkcentral Messenger demo application [![Build Status](https://travis-ci.org/sparkcentral/sparkcentral-messenger-demoapp.svg)](https://travis-ci.org/sparkcentral/sparkcentral-messenger-demoapp)
+# Sparkcentral Messenger demo application 
 Application to demonstrate the integration of Sparkcentral Messenger
 
 ## Build application
