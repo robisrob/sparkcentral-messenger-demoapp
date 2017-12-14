@@ -16,6 +16,7 @@ publish:
 	docker push sparkcentralinc/sparkcentral-messenger-demoapp:${version}; \
 	docker push sparkcentralinc/sparkcentral-messenger-demoapp:latest; \
 	(git remote add github git@github.com:sparkcentral/sparkcentral-messenger-demoapp.git || true); \
+	git checkout master; \
 	git push github master; \
 	git push github refs/tags/${version}; \
 
