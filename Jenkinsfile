@@ -3,7 +3,7 @@
 library 'jenkinsTools'
 
 makeWorkflow {
-    node = 'java8'
+    node = 'java9'
     app = 'sparkcentral-messenger-demoapp'
 
     amiPlaybooks = ['sparkcentral-messenger-demoapp:docker']

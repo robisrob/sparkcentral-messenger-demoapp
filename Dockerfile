@@ -1,5 +1,5 @@
 # Version: 0.0.1
-FROM openjdk:8-jre-alpine
+FROM openjdk:9-jre
 MAINTAINER Rob Swartenbroekx "rob.s@sparkcentral.com"
 WORKDIR /app
 ADD ./sparkcentral-messenger-demoapp.tar .
