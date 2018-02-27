@@ -17,6 +17,10 @@ The application is put on [Docker Hub](https://hub.docker.com/r/sparkcentralinc/
 
 `docker run -eAPP_ID=${app_id} -eSECRET_ID=${secret_id} -eSECRET_KEY={secret_key} -p8080:8080 sparkcentralinc/sparkcentral-messenger-demoapp`
 
+### Enable the detection of container-limited amount of RAM
+Pass the following environment variable to your container:
+`SPARKCENTRAL_MESSENGER_DEMOAPP_OPTS: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap`
+
 ## Documentation
 - [Integration with a website](documentation/INTEGRATION.md)
 - [JWT generator](documentation/JWTGENERATOR.md)

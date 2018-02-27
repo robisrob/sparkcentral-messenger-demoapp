@@ -5,10 +5,6 @@ plugins {
     id 'com.palantir.docker' version '0.13.0'
 }
 
-run {
-    jvmArgs  '-XX:+UnlockExperimentalVMOptions','-XX:+UseCGroupMemoryLimitForHeap'
-}
-
 sourceCompatibility = 1.9
 targetCompatibility = 1.9
 
