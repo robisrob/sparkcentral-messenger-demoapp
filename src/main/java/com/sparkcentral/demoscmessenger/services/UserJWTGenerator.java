@@ -2,6 +2,7 @@ package com.sparkcentral.demoscmessenger.services;
 
 import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 
 import static io.jsonwebtoken.SignatureAlgorithm.HS256;
@@ -10,21 +11,19 @@ import static org.apache.tomcat.util.codec.binary.Base64.encodeBase64;
 @Service
 public class UserJWTGenerator {
 
-    private final String secretId;
-    private final String secretKey;
+    private final Environment environment;
 
-    public UserJWTGenerator(@Value("${SECRET_ID}")String secretId, @Value("${SECRET_KEY}")String secretKey) {
-        this.secretId = secretId;
-        this.secretKey = secretKey;
+    public UserJWTGenerator(Environment environment) {
+        this.environment = environment;
     }
 
     public String createUserJwt(String userId) {
         return Jwts.builder()
                 .claim("scope", "appUser")
                 .claim("userId", userId)
-                .setHeaderParam("kid", secretId)
+                .setHeaderParam("kid", environment.getProperty("secretId"))
                 .setHeaderParam("typ", "JWT")
-                .signWith(HS256, base64Encoded(secretKey))
+                .signWith(HS256, base64Encoded(environment.getProperty("secretKey")))
                 .compact();
     }
 

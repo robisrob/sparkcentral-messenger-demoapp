@@ -18,6 +18,10 @@ repositories {
     mavenCentral()
 }
 
+run {
+    jvmArgs  '-Dspring.profiles.active="local"'
+}
+
 dependencyManagement {
     imports {
         mavenBom 'io.spring.platform:platform-bom:Brussels-SR7'
@@ -37,11 +41,13 @@ dependencies {
             'org.springframework.boot:spring-boot-starter-actuator',
             'io.jsonwebtoken:jjwt',
             'net.logstash.logback:logstash-logback-encoder'
+
     )
 
     testImplementation(
             'junit:junit',
             'org.assertj:assertj-core',
+            'org.mockito:mockito-core'
     )
 }
 

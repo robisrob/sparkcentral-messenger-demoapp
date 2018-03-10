@@ -9,7 +9,7 @@ After registering a Sparkcentral Messenger Channel in Sparkcentral, you will get
 
 After starting the application, you can open it by going to [http://localhost:8080](http://localhost:8080)
 ### Using gradle
-- make sure you set the env variables `APP_ID`, `SECRET_ID` and `SECRET_KEY`
+- make sure you set the variables `APP_ID`, `SECRET_ID` and `SECRET_KEY` in [application-local.properties](src/main/resources/application-local.properties)
 - `./gradlew run`
 
 ### Using Docker
