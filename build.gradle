@@ -3,6 +3,7 @@ plugins {
     id 'application'
     id 'io.spring.dependency-management' version '1.0.3.RELEASE'
     id 'com.palantir.docker' version '0.13.0'
+    id "org.unbroken-dome.test-sets" version "1.4.2"
 }
 
 sourceCompatibility = 1.9
@@ -15,11 +16,15 @@ ext {
 }
 
 repositories {
-    mavenCentral()
+    jcenter()
 }
 
 run {
     jvmArgs  '-Dspring.profiles.active=local'
+}
+
+testSets {
+    integrationTest
 }
 
 dependencyManagement {
@@ -49,6 +54,11 @@ dependencies {
             'org.assertj:assertj-core',
             'org.mockito:mockito-core'
     )
+
+    integrationTestImplementation(
+            'org.springframework.boot:spring-boot-starter-test'
+    )
+
 }
 
 docker {
