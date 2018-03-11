@@ -6,6 +6,9 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Mono;
+
+import static reactor.core.publisher.Mono.just;
 
 @RestController
 @RequestMapping("rest/properties")
@@ -20,7 +23,7 @@ public class PropertiesController {
 
     @GetMapping("appId")
     public String getAppId() {
-        LOGGER.info("Calling getAppId");
-        return environment.getProperty("appId");
+        LOGGER.trace("Calling getAppId");
+        return environment.getRequiredProperty("APP_ID");
     }
 }

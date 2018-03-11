@@ -29,8 +29,8 @@ public class UserJWTGeneratorTest {
     @Test
     public void testCreateJWT() {
         //GIVEN
-        when(environment.getProperty("secretId")).thenReturn(secretId);
-        when(environment.getProperty("secretKey")).thenReturn(secretKey);
+        when(environment.getRequiredProperty("secretId")).thenReturn(secretId);
+        when(environment.getRequiredProperty("secretKey")).thenReturn(secretKey);
 
         //WHEN
         String actual = userJWTGenerator.createUserJwt("rob.s@sparkcentral.com");

@@ -19,12 +19,12 @@ repositories {
 }
 
 run {
-    jvmArgs  '-Dspring.profiles.active="local"'
+    jvmArgs  '-Dspring.profiles.active=local'
 }
 
 dependencyManagement {
     imports {
-        mavenBom 'io.spring.platform:platform-bom:Brussels-SR7'
+        mavenBom 'org.springframework.boot:spring-boot-dependencies:2.0.0.RELEASE'
     }
 
     dependencies {
@@ -37,7 +37,7 @@ dependencyManagement {
 dependencies {
     implementation(
             'javax.xml.bind:jaxb-api',
-            'org.springframework.boot:spring-boot-starter-web',
+            'org.springframework.boot:spring-boot-starter-webflux',
             'org.springframework.boot:spring-boot-starter-actuator',
             'io.jsonwebtoken:jjwt',
             'net.logstash.logback:logstash-logback-encoder'
@@ -52,7 +52,7 @@ dependencies {
 }
 
 docker {
-    name "sparkcentral/sparkcentral-messenger-demoapp:${System.properties['buildNumber']}"
+    name "sparkcentral/sparkcentral-messenger-demoapp:localbuild"
     tags 'latest'
     files tasks.distTar.outputs
 }
