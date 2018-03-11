@@ -27,6 +27,10 @@ testSets {
     integrationTest
 }
 
+check.dependsOn(integrationTest)
+integrationTest.mustRunAfter test
+
+
 dependencyManagement {
     imports {
         mavenBom 'org.springframework.boot:spring-boot-dependencies:2.0.0.RELEASE'
