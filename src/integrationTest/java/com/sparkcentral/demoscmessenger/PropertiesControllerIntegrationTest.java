@@ -6,7 +6,6 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 
 public class PropertiesControllerIntegrationTest extends AbstractIntegrationTest{
 
-
     @Autowired
     private WebTestClient webClient;
 
