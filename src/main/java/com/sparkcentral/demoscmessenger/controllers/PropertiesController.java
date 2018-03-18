@@ -23,7 +23,7 @@ public class PropertiesController {
 
     @GetMapping("appId")
     public String getAppId() {
-        LOGGER.trace("Calling getAppId");
+        LOGGER.debug("Calling getAppId");
         return environment.getRequiredProperty("APP_ID");
     }
 }

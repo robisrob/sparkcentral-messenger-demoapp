@@ -18,7 +18,7 @@ public class UserJWTController {
 
     @GetMapping
     public String getJWTToken(@RequestParam(value="userId") String userId) {
-        LOGGER.trace("getJWTToken for {}", userId);
+        LOGGER.debug("getJWTToken for {}", userId);
         return userJWTGenerator.createUserJwt(userId);
     }
 
