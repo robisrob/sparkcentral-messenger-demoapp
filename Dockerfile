@@ -1,4 +1,4 @@
-FROM openjdk:10-jre
+FROM openjdk:9-jre
 MAINTAINER Rob Swartenbroekx "rob.s@sparkcentral.com"
 WORKDIR /app
 ADD ./sparkcentral-messenger-demoapp.tar .
